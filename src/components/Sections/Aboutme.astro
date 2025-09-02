@@ -1,0 +1,60 @@
+---
+import Avatar from "../../assets/avatar.webp"; 
+---
+
+<section id="aboutme" class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+  <!-- Columna Izquierda (Imagen) -->
+  <div class="flex justify-center">
+    <img 
+      src={Avatar.src}
+      alt="Leonela Comunidad" 
+      class="rounded-2xl shadow-lg max-w-sm w-full object-cover"
+    />
+  </div>
+
+  <!-- Columna Derecha (Texto) -->
+  <div>
+    <span class="text-green-700 font-semibold uppercase tracking-wide">Sobre mí</span>
+    <h2 class="text-3xl md:text-4xl font-bold mt-2">
+      Apasionada por construir <span class="text-green-600">comunidades prósperas</span>
+    </h2>
+    
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      ¡Hola! Soy Leonela, una <strong>community manager</strong>  
+      <strong> con años de experiencia</strong> en la construcción y nutrición de comunidades en línea.  
+      Mi enfoque combina <strong>pensamiento estratégico</strong> con 
+      <strong>conexión humana genuina</strong> para crear espacios donde las personas se sientan 
+      valoradas y comprometidas.
+    </p>
+
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      Me especializo en ayudar a las marcas a crear <strong>relaciones significativas</strong> con su audiencia mediante:
+    </p>
+
+    <ul class="mt-4 space-y-2 text-gray-800">
+      <li class="flex items-center gap-2"><span class="text-green-600">✔</span> Construcción de Comunidades</li>
+      <li class="flex items-center gap-2"><span class="text-green-600">✔</span> Estrategia de Contenido</li>
+      <li class="flex items-center gap-2"><span class="text-green-600">✔</span> Gestión de Redes Sociales</li>
+      <li class="flex items-center gap-2"><span class="text-green-600">✔</span> Optimización de Participación</li>
+    </ul>
+
+    <!-- CTA con estilo retro -->
+    <div class="mt-6">
+      <a 
+        id="whatsapp-link"
+        href="https://wa.me/XXXXXXXX" 
+        aria-label="Contactar a Leonela por WhatsApp"
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 text-white bg-green-700 border-2 border-black px-5 sm:px-7 py-2 sm:py-3 rounded-xl shadow-[4px_4px_0px_black] text-base sm:text-lg font-semibold hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
+      >
+        <!-- SVG WhatsApp -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24">
+          <path d="M12.01 2c-5.52 0-10 4.48-10 10 0 1.77.47 3.47 1.37 4.97L2 22l5.2-1.36c1.44.79 3.07 1.21 4.81 1.21h.01c5.52 0 10-4.48 10-10s-4.49-10-10.01-10zm5.47 14.59c-.23.65-1.35 1.23-1.87 1.31-.48.07-1.09.1-1.77-.11-.41-.13-.94-.3-1.61-.59-2.83-1.23-4.66-4.11-4.8-4.3-.14-.19-1.15-1.53-1.15-2.91s.73-2.06.99-2.34c.26-.27.57-.34.76-.34.19 0 .38.01.55.01.18.01.42-.07.66.5.23.57.79 1.98.86 2.13.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.31.32-.13.62.18.3.79 1.3 1.7 2.1 1.17 1.04 2.16 1.36 2.47 1.51.31.15.49.13.67-.08.18-.21.77-.9.97-1.21.2-.31.41-.25.69-.15.28.1 1.76.83 2.06.98.3.15.5.22.58.34.08.12.08.68-.15 1.33z"/>
+        </svg>
+        Hablemos
+      </a>
+      <p class="mt-2 text-sm text-gray-500">Primera consulta gratuita - ¡Hablemos hoy mismo!</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,118 @@
+---
+// Props si quieres hacerlo dinámico
+// Datos con propiedad plan separada
+const services = [
+  {
+    plan: "Plan Rosa",
+    title: "Gestión de Comunidades",
+    description: "Construyendo y nutriendo comunidades en línea que se involucran y crecen orgánicamente.",
+    benefits: [
+      "Aumento de participación del 200% en promedio",
+      "Comunidad activa 24/7",
+      "Respuestas personalizadas en menos de 4 horas"
+    ],
+    icon: "🌸"
+  },
+  {
+    plan: "Plan Girasol",
+    title: "Estrategia de Redes Sociales",
+    description: "Desarrollando planes integrales de redes sociales adaptados a los objetivos de tu marca.",
+    benefits: [
+      "Aumento de seguidores orgánicos",
+      "Mejora del engagement",
+      "Informe mensual con métricas claras"
+    ],
+    icon: "🌻"
+  },
+  {
+    plan: "Plan Lila",
+    title: "Creación de Contenido",
+    description: "Elaborando contenido atractivo que resuena con tu audiencia objetivo.",
+    benefits: [
+      "Contenido adaptado a cada plataforma",
+      "Calendario editorial personalizado",
+      "Imágenes y videos profesionales"
+    ],
+    icon: "💜"
+  },
+  {
+    plan: "Plan Azul",
+    title: "Gestión de Interacciones",
+    description: "Fomentando interacciones significativas y construyendo relaciones con tu comunidad.",
+    benefits: [
+      "Respuesta a mensajes y comentarios",
+      "Manejo de crisis comunicacional",
+      "Encuestas y feedback comunitario"
+    ],
+    icon: "🌺"
+  },
+  {
+    plan: "Plan Amarillo",
+    title: "Google Maps para Negocios",
+    description: "Configuración y optimización de tu perfil de negocio en Google Maps para aumentar tu visibilidad local.",
+    benefits: [
+      "Aumento de visitas físicas",
+      "Mejora de calificaciones",
+      "Gestión de reseñas y comentarios"
+    ],
+    icon: "🌼"
+  }
+];
+
+
+
+---
+<section id="benefits" class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h3 class="text-green-700 font-semibold text-sm uppercase mb-2">Beneficios</h2>
+    <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">
+      Lo que puedo hacer para <span class="text-green-700">tu marca</span>
+    </h2>
+    <p class="text-gray-600 mb-12 max-w-2xl mx-auto">
+      Ofrezco soluciones integrales de gestión de comunidades adaptadas a las necesidades y objetivos únicos de tu marca.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map(service => (
+        <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col justify-between hover:shadow-2xl transition">
+          <div class="mb-4 text-4xl">{service.icon}</div>
+          
+          <!-- Badge del plan -->
+          <span class="inline-block mb-2 px-3 py-1 bg-green-100 text-green-800 text-xs font-semibold rounded-full">
+            {service.plan}
+          </span>
+          
+          <h3 class="text-xl font-semibold mb-2">{service.title}</h3>
+          <p class="text-gray-600 mb-4">{service.description}</p>
+          <ul class="mb-4 text-gray-700 space-y-1">
+            {service.benefits.map(benefit => (
+              <li class="flex items-center gap-2">
+                <span class="text-green-500">✔️</span> {benefit}
+              </li>
+            ))}
+          </ul>
+          <div class="flex gap-2 mt-auto">
+            <a
+              id="whatsapp-link"
+              aria-label={`Contactar por WhatsApp sobre ${service.title}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex-1 inline-flex items-center justify-center gap-2 text-white bg-green-700 border-2 border-black px-5 py-2 rounded-xl shadow-[4px_4px_0px_black] font-semibold text-base sm:text-lg hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
+            >
+              WhatsApp
+            </a>
+            <a
+              id="instagram-link"
+              aria-label={`Contactar por Instagram sobre ${service.title}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex-1 inline-flex items-center justify-center gap-2 text-white bg-pink-600 border-2 border-black px-5 py-2 rounded-xl shadow-[4px_4px_0px_black] font-semibold text-base sm:text-lg hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
+            >
+              Instagram
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
