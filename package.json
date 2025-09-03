@@ -10,10 +10,13 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@astrojs/react": "^4.3.0",
     "@notionhq/client": "^4.0.2",
     "@tailwindcss/vite": "^4.1.12",
     "astro": "^5.13.5",
     "dotenv": "^17.2.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "swiper": "^11.2.10",
     "tailwindcss": "^4.1.12"
   },
