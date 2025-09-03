@@ -59,9 +59,30 @@ export default function TestimonialsCarousel() {
     trackRef.current.style.transform = `translateX(${-newIndex * (100 / spv)}%)`;
   };
 
-  const slide = (direction: number) => { setIndex((prev) => prev + direction); startAutoSlide(); };
-  const startAutoSlide = () => { stopAutoSlide(); autoSlideRef.current = setInterval(() => setIndex((prev) => prev + 1), 5000); };
-  const stopAutoSlide = () => { if (autoSlideRef.current) clearInterval(autoSlideRef.current as any); };
+  const slide = (direction: number) => {
+    setIndex((prev) => {
+      const spv = slidesPerView();
+      const maxIndex = testimonials.length - spv;
+      let next = prev + direction;
+      if (next < 0) next = maxIndex;
+      if (next > maxIndex) next = 0;
+      return next;
+    });
+    startAutoSlide();
+  };
+  const startAutoSlide = () => {
+    stopAutoSlide();
+    autoSlideRef.current = setInterval(() => {
+      setIndex((prev) => {
+        const spv = slidesPerView();
+        const maxIndex = testimonials.length - spv;
+        let next = prev + 1;
+        if (next > maxIndex) next = 0;
+        return next;
+      });
+    }, 5000);
+  };
+const stopAutoSlide = () => { if (autoSlideRef.current) clearInterval(autoSlideRef.current as any); };
 
   useEffect(() => { updateCarousel(); }, [index, testimonials]);
   useEffect(() => {
