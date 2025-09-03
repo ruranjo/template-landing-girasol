@@ -1,4 +1,6 @@
 ---
+import { getSheetData, SHEET_TESTIMONIALS_URL } from "../../lib/getSheetData";
+
 const testimonios = [
   {
     nombre: "María Rodríguez",
@@ -43,6 +45,7 @@ const testimonios = [
     emoji: "🌻",
   },
 ];
+const testimonioss = await getSheetData(SHEET_TESTIMONIALS_URL);
 ---
 
 <section id="testimonials" class="max-w-6xl mx-auto px-6 py-16">
@@ -52,12 +55,12 @@ const testimonios = [
   <div class="relative overflow-hidden">
     <!-- Slides -->
     <div id="carousel-track" class="flex transition-transform duration-500 ease-in-out">
-      {testimonios.map((t) => (
+      {testimonioss.map((t) => (
         <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
           <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col h-full">
             <!-- Estrellas -->
             <div class="flex text-yellow-400 mb-3">
-              {"★".repeat(t.estrellas)}{"☆".repeat(5 - t.estrellas)}
+              {"★".repeat(Number(t.estrellas))}{"☆".repeat(5 - Number(t.estrellas))}
             </div>
             <!-- Texto -->
             <p class="text-gray-700 italic mb-4">"{t.texto}"</p>
